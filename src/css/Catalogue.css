@@ -1,0 +1,86 @@
+.catalogue-container {
+  padding: 20px;
+  padding-top: 150px;
+}
+
+.catalogue-main {
+  text-align: center;
+  padding: 20px;
+}
+
+.catalogue-heading {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns */
+  gap: 20px;
+  justify-content: center; /* Center the grid horizontally */
+  padding: 20px 0;
+}
+
+.item-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  border: none;
+  background: #ffd700;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .items-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .catalogue-container {
+    padding: 10px;
+    padding-top: 100px;
+  }
+
+  .items-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(80px, 1fr)); /* 5 columns */
+    gap: 10px;
+  }
+
+  .item-card {
+    position: relative; /* Ensure position context for pseudo-elements */
+    overflow: hidden; /* Hide overflow for large first image */
+  }
+
+  .item-card:first-child {
+    grid-column: span 2; /* Span 2 columns for the first item */
+  }
+
+  .item-card img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px;
+    transition: transform 0.3s ease; /* Optional: Add a smooth hover effect */
+  }
+}
+
+@media (max-width: 480px) {
+  .items-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adapt to very small screens */
+  }
+
+  .item-card img {
+    border-radius: 4px;
+  }
+}
